@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="title">Simone Estética</ui:insert></title>
+	
+	<h:form id="menuBar">
+			<p:menubar>
+				<p:menuitem value="Home" icon="ui-icon-home"
+					action="/views/home.xhtml?faces-redirect=true" />
+
+				<p:submenu label="Usuarios" icon="ui-icon-document">
+					<p:menuitem value="Cadastro de Usuario" icon="ui-icon-document"
+						action="/views/VisualRegisterUser.xhtml?faces-redirect=true" />
+						<p:menuitem value="Buscar Usuarios" icon="ui-icon-search"
+						action="/views/ShowAllUsers.xhtml?faces-redirect=true" />
+				</p:submenu>
+				<p:submenu label="Clientes" icon="ui-icon-document">
+				<p:menuitem value="Cadastro de Cliente" icon="ui-icon-document"
+						action="/views/VisualRegisterCustomer.xhtml?faces-redirect=true" />
+					<p:menuitem value="Buscar Clientes" icon="ui-icon-search"
+						action="/views/ShowAllCustomers.xhtml?faces-redirect=true" />
+				</p:submenu>
+			</p:menubar>
+		</h:form>
+</h:head>
+
+<h:body>
+		
+	
+	<div id="content" style="margin-top: 5%;">
+		<ui:insert name="content">
+		</ui:insert>
+	</div>
+	
+	<p:separator style="margin-top:20px"/>
+	Definir Footer
+	
+
+</h:body>
+
+</html>

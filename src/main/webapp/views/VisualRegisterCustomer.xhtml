@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/templates/layout.xhtml">
+<ui:define name="content">
+ 
+	   <h:head>
+
+	<title>Cadastro de Clientes</title>
+</h:head>
+<h:body>
+
+	<p:panel header="Cadastro de Clientes">
+		<h:form acceptcharset="UTF-8" id="form-alert">
+			<p:messages />
+			<h:panelGrid columns="2">
+				<p:outputLabel value="Nome:" for="txtName" />
+				<p:inputText id="txtName" label="Name"
+					value="#{customerBean.registerCustomerModel.nameCustomer}"
+					required="true" />
+
+				<p:outputLabel value="CPF:" for="txtCPF" />
+				<p:inputText id="txtCPF" label="CPF"
+					value="#{customerBean.registerCustomerModel.cpfCustomer}"
+					required="true" />
+					
+				<p:outputLabel value="Data de Nascimento:" for="txtDateNasc" />
+				<p:inputText id="txtDateNasc" label="Nascimento"
+					value="#{customerBean.dto.birthDateCustomer}"
+					required="true" >
+						<f:convertDateTime  pattern="dd/MM/yyyy" /> 
+					</p:inputText>
+					
+
+				<p:outputLabel value="E-Mail:" for="txtEmail" />
+				<p:inputText id="txtEmail" label="e-Mail"
+					value="#{customerBean.registerCustomerModel.eMailCustomer}" />
+				
+				<p:outputLabel value="Peso inicial:" for="txtStartingWeight" />
+				<p:inputText id="txtStartingWeight" label="StartingWeight"
+					value="#{customerBean.registerCustomerModel.startingWeightCustomer}"
+					required="true" />
+					
+				<p:outputLabel value="Altura:" for="txtHeight" />
+				<p:inputText id="txtHeight" label="Height"
+					value="#{customerBean.registerCustomerModel.heightCustomer}"
+					required="true" />
+					
+				<p:outputLabel value="Descrição:" for="txtDescription" />
+				<p:inputTextarea id="txtDescription" label="Description"
+					value="#{customerBean.registerCustomerModel.descriptionCustomer}"
+					required="true" />
+
+				<p:commandButton action="#{customerBean.newCustomer()}"
+					value="Cadastrar Cliente" update="form-alert" />
+			</h:panelGrid>
+		</h:form>
+	</p:panel>
+</h:body>
+ 
+	</ui:define>
+ 
+</ui:composition>
+
+
+</html>
